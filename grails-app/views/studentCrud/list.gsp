@@ -1,0 +1,96 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: shoaib
+  Date: 30/7/17
+  Time: 4:01 PM
+--%>
+
+<%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+<head>
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <tr>
+                    <th>University Roll No</th>
+                    <th>College Id</th>
+                    <th>Branch</th>
+                    <th>Name Of Stud</th>
+                    <th>Mob No</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Date</th>
+                    <th>10<sup>th</sup></th>
+                    <th>10<sup>th</sup> Board</th>
+                    <th>10<sup>th</sup> Passing Year</th>
+                    <th>12<sup>th</sup></th>
+                    <th>12<sup>th</sup> Board</th>
+                    <th>12<sup>th</sup> Passing Year</th>
+                    <th>First Sem</th>
+                    <th>Second Sem</th>
+                    <th>Third Sem</th>
+                    <th>Fourth Sem</th>
+                    <th>Fivth Sem</th>
+                    <th>Sixth Sem</th>
+                    <th>Average</th>
+                    <th>Current Backlog</th>
+                    <th>Passing year</th>
+                    <th>Home Town</th>
+                    <th>Father's Name</th>
+                    <th>Occupation</th>
+                    <th>Address</th>
+                    <th>Company Name</th>
+                    <th>Action</th>
+                </tr>
+                <g:each in = "${stud}">
+                    <tr>
+                        <td>${it.universityRoll}</td>
+                        <td>${it.clgId}</td>
+                        <td>${it.branch}</td>
+                        <td>${it.nameOfStud}</td>
+                        <td>${it.mobno}</td>
+                        <td>${it.email}</td>
+                        <td>${it.gender}</td>
+                        <td>${it.date}</td>
+                        <td>${it.tenth}</td>
+                        <td>${it.tenbrd}</td>
+                        <td>${it.tenpyr}</td>
+                        <td>${it.twelveth}</td>
+                        <td>${it.twlbrd}</td>
+                        <td>${it.twlpyr}</td>
+                        <td>${it.firsem}</td>
+                        <td>${it.secsem}</td>
+                        <td>${it.thisem}</td>
+                        <td>${it.fousem}</td>
+                        <td>${it.fivsem}</td>
+                        <td>${it.sixsem}</td>
+                        <td>${it.avg}</td>
+                        <td>${it.curback}</td>
+                        <td>${it.poy}</td>
+                        <td>${it.hmtown}</td>
+                        <td>${it.fname}</td>
+                        <td>${it.ocup}</td>
+                        <td>${it.add}</td>
+                        <td>${it.companyName}</td>
+                        <td><g:link action="view" id="${it.id}" class="btn btn-primary">Update</g:link></td>
+                    </tr>
+                </g:each>
+            </table>
+
+                <g:link action="navbar" class="btn btn-primary" style="margin-left: 3%">Ok</g:link>
+            </table>
+                    </div>
+    </div>
+</body>
+</html>
