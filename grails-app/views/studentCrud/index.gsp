@@ -45,7 +45,7 @@
     <div class="row">
         <form action="/studentCrud/dataSave" method="post">
 
-        <div class="col-md-4">
+        <div class="col-md-3">
                 <div class="form-group">
                     <label>University Roll Number:</label>
                     <input type="tel" class="form-control bgColor" name="universityRoll"  required>
@@ -74,6 +74,8 @@
                     <label>Gender</label>
                     <input type="text" class="form-control bgColor" name="gender" required>
                 </div>
+        </div>
+            <div class="col-md-3">
                 <div class="form-group">
                     <label>DATE OF BIRTH (DD/MM/YYYY)</label>
                     <input type="date" class="form-control bgColor" name="date" required>
@@ -88,8 +90,6 @@
                     <label>Board</label>
                     <input type="text" class="form-control bgColor" name="tenbrd" required>
                 </div>
-            </div>
-            <div class="col-md-4">
 
                 <div class="form-group">
                     <label>Pass Year</label>
@@ -107,6 +107,8 @@
                     <label>Pass Year</label>
                     <input type="tel" class="form-control bgColor" name="twlpyr" required>
                 </div>
+            </div>
+            <div class="col-md-3">
                 <div class="form-group">
                     <label>1st Sem Percentage</label>
                     <input type="tel" class="form-control bgColor" name="firsem" required>
@@ -134,13 +136,14 @@
                     <label>6th Sem Percentage</label>
                     <input type="tel" class="form-control bgColor" name="sixsem" required>
                 </div>
-            </div>
-            <div class="col-md-4">
+
 
                 <div class="form-group">
                     <label>Overall Percentage</label>
                     <input type="tel" class="form-control bgColor" name="avg" required>
                 </div>
+            </div>
+            <div class="col-md-3">
                 <div class="form-group">
                     <label>Current Backlogs</label>
                     <input type="text" class="form-control bgColor" name="curback" required>

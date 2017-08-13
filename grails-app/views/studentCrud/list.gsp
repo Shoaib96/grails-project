@@ -9,16 +9,17 @@
 <html>
 <head>
     <title></title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    %{--<meta name="layout" content="studentNav"/>--}%
+    <asset:stylesheet src="bootstrap.min.css"/>
+    <asset:javascript src="jquery-2.2.0.min.js"/>
+    <asset:javascript src="bootstrap.min.js"/>
 </head>
 <body>
+<g:if test = "${flash.message}">
+    <div class="alert alert-success">
+        <div>${flash.message}</div>
+    </div>
+</g:if>
     <div class="row">
         <div class="col-md-12">
             <table class="table table-bordered">

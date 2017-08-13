@@ -5,7 +5,6 @@ class StudentCrudController {
     def index() {
         if(session.loginuser) {
             Login loginUser = Login.findById(session.loginuser)
-            println session.loginuser
             List studList = Student.findAllByLoginref(loginUser)
             [stud: studList]
             List companyList = Company.findAll()
@@ -18,9 +17,14 @@ class StudentCrudController {
     }
 
     def list() {
-        Login loginUser = Login.findById(session.loginuser)
-        List studList = Student.findAllByLoginref(loginUser)
-        [stud: studList]
+        if(session.loginuser) {
+            Login loginUser = Login.findById(session.loginuser)
+            List studList = Student.findAllByLoginref(loginUser)
+            [stud: studList]
+        }
+        else
+            redirect controller:"login", action: "index"
+
     }
 
     def dataSave() {
@@ -54,22 +58,30 @@ class StudentCrudController {
         studentDetails.add = params.add
         studentDetails.companyName = params.cmp
         studentDetails.loginref = session.loginuser
-        println params
         Student studentInstance = new Student(studentDetails)
         studentInstance.save(flush: true)
         redirect(action: "index")
     }
 
-    def navbar(long id) { }
-    def view(long id) {
+    def navbar(long id) {
+        if(session.loginuser) {}
+        else
+            redirect controller:"login", action: "index"
 
-        Student studentInstance = Student.get(id)
-        if(studentInstance) {
-            [studentInstance: studentInstance]
+    }
+    def view(long id) {
+        if(session.loginuser) {
+
+            Student studentInstance = Student.get(id)
+            if (studentInstance) {
+                [studentInstance: studentInstance]
+            } else {
+                flash.message = "Update Successfully"
+                redirect(action: "list")
+            }
         }
-        else {
-            redirect(action: "list")
-        }
+        else
+            redirect controller:"login", action: "index"
     }
     def update(long id) {
         Student studentInstance = Student.get(id)
@@ -107,20 +119,28 @@ class StudentCrudController {
     }
 
     def companyView() {
-       /* Login loginUser = Login.findById(session.loginuser)
+        if(session.loginuser) {
+            /* Login loginUser = Login.findById(session.loginuser)
         List companyList = Company.findAllByLoginref(loginUser)
         [companyList: companyList]
 */
-        List companyList = Company.findAll()
-        [companyList: companyList]
+            List companyList = Company.findAll()
+            [companyList: companyList]
+        }
+        else
+            redirect controller:"login", action: "index"
     }
 
     def companyInfo() {
-        /*Login loginUser = Login.findById(session.loginuser)
+        if(session.loginuser) {
+            /*Login loginUser = Login.findById(session.loginuser)
         List companyList = Company.findAllByLoginref(loginUser)
         [companyList: companyList]*/
-        List companyList = Company.findAll()
-        [companyList: companyList]
+            List companyList = Company.findAll()
+            [companyList: companyList]
+        }
+        else
+            redirect controller:"login", action: "index"
     }
     def logout() {
         session.invalidate()

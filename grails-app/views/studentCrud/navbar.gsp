@@ -9,6 +9,7 @@
 <html>
 <head>
     <title></title>
+    <meta name="layout" content="studentNav"/>
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:javascript src="jquery-2.2.0.min.js"/>
     <asset:javascript src="bootstrap.min.js"/>
@@ -27,29 +28,11 @@
 
 </head>
 <body>
-<ul class="nav nav-tabs">
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Information<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="list">View</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Placement<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="companyView">Qualified Company</a></li>
-            <li><a href="companyInfo">Company Information</a></li>
-            <li><a href="index">Register</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li><a href="logout">Logout</a></li>
-        </ul>
-    </li>
-</ul>
-
+<g:if test = "${flash.message}">
+    <div class="alert alert-success">
+        <div>${flash.message}</div>
+    </div>
+</g:if>
 <asset:image src="stud1.jpg" class="img"/>
 </body>
 </html>

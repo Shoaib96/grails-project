@@ -28,11 +28,14 @@
 
 </head>
 
-<body style="background-color: #f8ceff ">
+<body>
 <div class="container">
+    <h1>Student Update</h1>
+    <hr>
 <div class="row">
-    <div class="col-md-6">
+
         <form action="/studentCrud/update/${studentInstance?.id}">
+            <div class="col-md-3">
             <div class="form-group">
                 <label>University Roll Number:</label>
                 <input type="tel" class="form-control bgColor" value="${studentInstance?.universityRoll}" name="universityRoll">
@@ -61,6 +64,8 @@
                 <label>Gender</label>
                 <input type="text" class="form-control bgColor" value="${studentInstance?.gender}" name="gender">
             </div>
+            </div>
+            <div class="col-md-3">
             <div class="form-group">
                 <label>DATE OF BIRTH (DD/MM/YYYY)</label>
                 <input type="text" class="form-control bgColor" value="${studentInstance?.date}" name="date">
@@ -89,6 +94,8 @@
                 <label>Pass Year</label>
                 <input type="tel" class="form-control bgColor" value="${studentInstance?.twlpyr}" name="twlpyr">
             </div>
+            </div>
+            <div class="col-md-3">
             <div class="form-group">
                 <label>1st Sem Percentage</label>
                 <input type="tel" class="form-control bgColor" value="${studentInstance?.firsem}" name="firsem">
@@ -114,9 +121,11 @@
                 <input type="tel" class="form-control bgColor" value="${studentInstance?.sixsem}" name="sixsem">
             </div>
             <div class="form-group">
-                <label>Overall Percentage{(((1+2)/2)+3+4+5+6)/5</label>
+                <label>Overall Percentage</label>
                 <input type="tel" class="form-control bgColor" value="${studentInstance?.avg}" name="avg">
             </div>
+            </div>
+            <div class="col-md-3">
             <div class="form-group">
                 <label>Current Backlogs</label>
                 <input type="tel" class="form-control bgColor" value="${studentInstance?.curback}" name="curback">
@@ -142,9 +151,8 @@
                 <input type="text" class="form-control bgColor" value="${studentInstance?.add}" name="add">
             </div>
             <button type="submit" class="btn btn-success">Update</button>
-
+            </div>
         </form>
-    </div>
 </div>
 </div>
 </body>

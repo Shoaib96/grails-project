@@ -2,7 +2,11 @@ package tandp.org.ep
 
 class AdminController {
 
-    def index() {}
+    def index() {
+        if(session.loginuser){}
+        else
+            redirect controller:"login", action:"index"
+    }
 
     def viewList() {
        if(session.loginuser) {
