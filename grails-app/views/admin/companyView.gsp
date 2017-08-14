@@ -37,6 +37,7 @@
 </g:if>
 
 <div class="container">
+<g:if test = "${companyList}">
     <div class="row">
         <div class="col-md-12">
             <h1 style="text-align: center;">Company List</h1>
@@ -70,6 +71,11 @@
             </div>
         </div>
     </div>
+</g:if>
+    <g:else>
+        <h1>No Company List to display</h1>
+    </g:else>
+
 </div>
 </body>
 </html>

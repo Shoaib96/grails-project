@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>companyInfo</title>
+    <meta name="layout" content="studentNav"/>
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:javascript src="jquery-3.2.0.min.js"/>
     <asset:javascript src="bootstrap.min.js"/>
@@ -52,7 +53,6 @@
             </div>
         </g:each>
                 <br>
-        <g:link action="navbar"  class="btn btn-primary">OK</g:link>
             </div>
         </div>
     </div>

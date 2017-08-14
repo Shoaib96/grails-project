@@ -32,6 +32,7 @@
 </g:if>
 
     <div class="container">
+        <g:if test = "${stud}">
         <div class="row">
             <div class="col-md-12">
                 <h1 style="text-align: center;">Student List</h1>
@@ -59,6 +60,11 @@
                 <g:link action="download" class="btn btn-primary">Download</g:link>
                  </div>
         </div>
+        </g:if>
+        <g:else>
+            <h1>No Student List to display</h1>
+        </g:else>
+
     </div>
 </body>
 </html>

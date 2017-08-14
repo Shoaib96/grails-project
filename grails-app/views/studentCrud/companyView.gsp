@@ -9,6 +9,7 @@
 <html>
 <head>
     <title></title>
+    <meta name="layout" content="studentNav"/>
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:javascript src="jquery-3.2.0.min.js"/>
     <asset:javascript src="bootstrap.min.js"/>
@@ -30,6 +31,7 @@
 <body>
 %{--<asset:image src="bg-3-full.jpg" class="img"/>--}%
 <div class="container">
+    <g:if test = "${companyList}">
     <div class="row">
         <div class="col-md-12">
             <h1 style="text-align: center;">Company List</h1>
@@ -55,12 +57,14 @@
                     </tr>
                 </g:each>
             </table>
-                <div style="text-align: center;">
-            <g:link action="navbar"  class="btn btn-primary">OK</g:link>
-                </div>
+
             </div>
         </div>
     </div>
+    </g:if>
+    <g:else>
+        <h1>No Company List to display</h1>
+    </g:else>
 </div>
 </body>
 </html>
