@@ -28,11 +28,15 @@
 
 </head>
 <body>
+<div class="row">
+    <div class="col-md-3">
 <g:if test = "${flash.message}">
     <div class="alert alert-success">
         <div>${flash.message}</div>
     </div>
 </g:if>
+    </div>
+</div>
 <asset:image src="stud1.jpg" class="img"/>
 </body>
 </html>

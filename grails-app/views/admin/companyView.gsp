@@ -51,6 +51,7 @@
                         <th>Date Of Recruitment</th>
                         <th>Number Of Recruitment</th>
                         <th>Branch</th>
+                        <th>Action</th>
                     </tr>
                     <g:each in = "${companyList}">
                         <tr>
