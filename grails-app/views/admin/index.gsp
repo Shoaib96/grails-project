@@ -19,11 +19,15 @@
 </head>
 
 <body>
+<div  class="row">
+    <div class="col-md-3">
 <g:if test = "${flash.message}">
     <div class="alert alert-success">
         <div>${flash.message}</div>
     </div>
 </g:if>
+    </div>
+</div>
 <asset:image src="Picture1.png" style="width:100%; position: absolute; top: 0px; left: 0px; z-index: -1; height: 100%;" />
 </body>
 </html>

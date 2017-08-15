@@ -5,10 +5,6 @@
         <g:layoutTitle default="Student"/>
     </title>
 
-    <asset:stylesheet src="bootstrap.min.css"/>
-    <asset:javascript src="jquery-3.2.0.min.js"/>
-    <asset:javascript src="bootstrap.min.js"/>
-
     <g:layoutHead/>
 </head>
 
