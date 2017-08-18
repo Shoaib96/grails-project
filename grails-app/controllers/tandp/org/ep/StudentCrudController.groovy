@@ -27,7 +27,7 @@ class StudentCrudController {
 
     }
 
-    def dataSave() {
+    def dataSave(long cmp) {
         Map studentDetails = [:]
         studentDetails.universityRoll = params.universityRoll
         studentDetails.clgId = params.clgId
@@ -56,8 +56,9 @@ class StudentCrudController {
         studentDetails.fname = params.fname
         studentDetails.ocup = params.ocup
         studentDetails.add = params.add
-        studentDetails.companyName = params.cmp
+//        studentDetails.companyName = params.cmp
         studentDetails.loginref = session.loginuser
+        studentDetails.companyref = cmp
         Student studentInstance = new Student(studentDetails)
         studentInstance.save(flush: true)
         redirect(action: "index")

@@ -15,23 +15,18 @@
     <asset:javascript src="bootstrap.min.js"/>
 
     <style>
-    th, tr {
+        th, tr {
         text-align: center;
     }
 
-        .table {
-            background-color: #98A9BB;
-        }
     </style>
 </head>
 
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
             <h1 style="text-align: center;">About Student</h1>
             <hr>
-            <div style="background-color: white">
+    <div class="col-md-4">
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>University Roll No</th>
@@ -48,11 +43,11 @@
 
                 </tr>
                 <tr>
-                    <th>Name Of Stud</th>
+                    <th>Name Of Student</th>
                     <td>${studentInstance?.nameOfStud}</td>
                 </tr>
                 <tr>
-                    <th>Mob No</th>
+                    <th>Mobile No</th>
                     <td>${studentInstance?.mobno}</td>
                 </tr>
                 <tr>
@@ -63,62 +58,75 @@
                     <th>Gender</th>
                     <td>${studentInstance?.gender}</td>
                 </tr>
-                <tr>
+                    <tr>
                     <th>Date</th>
                     <td>${studentInstance?.date}</td>
                 </tr>
                 <tr>
-                    <th>Tenth</th>
+                    <th>10<sup>th</sup> %</th>
                     <td>${studentInstance?.tenth}</td>
                 </tr>
                 <tr>
-                    <th>Tenth Board</th>
+                    <th>10<sup>th</sup> Board</th>
                     <td>${studentInstance?.twlbrd}</td>
                 </tr>
-                <tr>
-                    <th>Tenth Passing Year</th>
+            </table>
+    </div>
+    <div class="col-md-4">
+    <table class="table table-bordered table-striped">
+
+        <tr>
+                    <th>10<sup>th</sup> Passing Year</th>
                     <td>${studentInstance?.tenpyr}</td>
                 </tr>
                 <tr>
-                    <th>Twelve</th>
+                    <th>12<sup>th</sup></th>
                     <td>${studentInstance?.twelveth}</td>
                 </tr>
                 <tr>
-                    <th>Twelve Board</th>
+                    <th>12<sup>th</sup> Board</th>
                     <td>${studentInstance?.twlbrd}</td>
                 </tr>
                 <tr>
-                    <th>Twelve Passing Year</th>
+                    <th>12<sup>th</sup> Passing Year</th>
                     <td>${studentInstance?.twlpyr}</td>
                 </tr>
+
                 <tr>
-                    <th>Fir Sem</th>
+                    <th>1<sup>st</sup> Sem</th>
                     <td>${studentInstance?.firsem}</td>
                 </tr>
                 <tr>
-                    <th>Sec Sem</th>
+                    <th>2<sup>nd</sup> Sem</th>
                     <td>${studentInstance?.secsem}</td>
                 </tr>
                 <tr>
-                    <th>Thi Sem</th>
+                    <th>3<sup>rd</sup> Sem</th>
                     <td>${studentInstance?.thisem}</td>
                 </tr>
                 <tr>
-                    <th>Fou Sem</th>
+                    <th>4<sup>th</sup> Sem</th>
                     <td>${studentInstance?.fousem}</td>
                 </tr>
                 <tr>
-                    <th>Fiv Sem</th>
+                    <th>5<sup>th</sup> Sem</th>
                     <td>${studentInstance?.fivsem}</td>
                 </tr>
                 <tr>
-                    <th>Six Sem</th>
+                    <th>6<sup>th</sup> Sem</th>
                     <td>${studentInstance?.sixsem}</td>
                 </tr>
+    </table>
+    </div>
+    <div class="col-md-4">
+            <table class="table table-bordered table-striped">
+
                 <tr>
                     <th>Average</th>
                     <td>${studentInstance?.avg}</td>
                 </tr>
+
+
                 <tr>
                     <th>Current Backlog</th>
                     <td>${studentInstance?.curback}</td>
@@ -145,19 +153,11 @@
                 </tr>
                 <tr>
                     <th>Company Name</th>
-                    <td>${studentInstance?.companyName}</td>
+                    <td>${studentInstance?.companyref.companyName}</td>
                 </tr>
-                <tr>
-                    <th>Action</th>
-                    <td><g:link action="delete" id="${studentInstance?.id}" class="btn btn-danger">Delete</g:link></td>
-                </tr>
-            </table>
-            </div>
-            <div style="margin-left: 2%">
-                <g:link action="viewList"  class="btn btn-primary" style="width: 80px">Done</g:link>
-            </div>
-        </div>
-    </div>
+                </table>
+</div>
+    <g:link action="delete" id="${studentInstance?.id}" class="btn btn-danger" style="margin-left: 15px;">Delete</g:link>
 </div>
 </body>
 </html>

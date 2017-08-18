@@ -173,13 +173,13 @@
                     <select name="cmp" class="form-control bgColor" required>
                         <option></option>
                         <g:each in = "${companyList}">
-                        <option value="${it.companyName}">${it.companyName}</option>
+                        <option value="${it.id}">${it.companyName}</option>
                         </g:each>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-success">Submit</button>
                 &nbsp;
-                <g:link action="navbar"  class="btn btn-primary">Cancel</g:link>
+                <g:link action="n                                                                                                                                                                                                                                                                   avbar"  class="btn btn-primary">Cancel</g:link>
             </form>
 
         </div>

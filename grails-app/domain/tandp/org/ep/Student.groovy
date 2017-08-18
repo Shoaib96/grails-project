@@ -28,8 +28,9 @@ class Student {
     String fname
     String ocup
     String add
-    String companyName
+//    String companyName
     Login loginref
+    Company companyref
 
     static constraints = {
     }

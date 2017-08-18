@@ -21,8 +21,9 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+
             <form action="/admin/companySave" method="post">
+                <div class="col-md-4">
                 <div class="form-group">
                     <label>Company ID</label>
                     <input type="text" class="form-control" name="companyId">
@@ -47,15 +48,17 @@
                     <label>Branch</label>
                     <input type="text" class="form-control"  name="branch">
                 </div>
+                </div>
+                <div class="col-md-4">
                 <div class="form-group">
                     <label>About</label>
-                    <textarea class="form-control" name="about" rows="4" cols="10"></textarea>
+                    <textarea class="form-control" name="about" rows="10" cols="10"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 &nbsp;
                 <button type="reset" class="btn btn-danger">Cancel</button>
+                </div>
                </form>
-        </div>
     </div>
 </div>
 

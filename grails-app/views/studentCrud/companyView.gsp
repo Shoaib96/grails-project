@@ -17,6 +17,10 @@
     .table {
         margin-top: 3%;
     }
+    th, tr {
+        text-align: center;
+    }
+
     /*.img {
         position: absolute;
         top: 0px;

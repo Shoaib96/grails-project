@@ -13,7 +13,7 @@
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:javascript src="jquery-2.2.0.min.js"/>
     <asset:javascript src="bootstrap.min.js"/>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+
 <style>
 
     .img {

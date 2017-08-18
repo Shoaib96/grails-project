@@ -83,7 +83,7 @@
                         <td>${it.fname}</td>
                         <td>${it.ocup}</td>
                         <td>${it.add}</td>
-                        <td>${it.companyName}</td>
+                        <td>${it.companyref.companyName}</td>
                         <td><g:link action="view" id="${it.id}" class="btn btn-primary">Update</g:link></td>
                     </tr>
                 </g:each>

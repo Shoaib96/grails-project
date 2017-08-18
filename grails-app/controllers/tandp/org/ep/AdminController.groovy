@@ -10,12 +10,13 @@ class AdminController {
 
     def viewList() {
        if(session.loginuser) {
-           List studList = Student.findAll()
-           [stud: studList]
+           def var = 1
+               Company companyId = Company.findById(var)
+               List studList = Student.findAllByCompanyref(companyId)
+               [stud: studList]
        }
         else
            redirect controller:"login", action: "index"
-
     }
 
     def viewCompleteList(long id) {
