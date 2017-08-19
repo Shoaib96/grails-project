@@ -6,14 +6,18 @@ class StudentCrudController {
         if(session.loginuser) {
             Login loginUser = Login.findById(session.loginuser)
             List studList = Student.findAllByLoginref(loginUser)
-            [stud: studList]
-            List companyList = Company.findAll()
-            [companyList: companyList]
+            if(studList) {
+             def message = "You are already registered"
+                [message: message]
+            }
+            else {
+                List companyList = Company.findAll()
+                [companyList: companyList]
+            }
         }
         else {
             redirect controller:"login", action: "index"
         }
-
     }
 
     def list() {
@@ -21,10 +25,10 @@ class StudentCrudController {
             Login loginUser = Login.findById(session.loginuser)
             List studList = Student.findAllByLoginref(loginUser)
             [stud: studList]
+
         }
         else
             redirect controller:"login", action: "index"
-
     }
 
     def dataSave(long cmp) {
