@@ -20,6 +20,11 @@
 <body>
 <br>
 <div class="container">
+    <g:if test = "${flash.message}">
+        <div class="alert alert-info">
+            <div>${flash.message}</div>
+        </div>
+    </g:if>
     <div class="row">
 
             <form action="/admin/companySave" method="post">

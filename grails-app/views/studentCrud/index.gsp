@@ -156,7 +156,7 @@
                     <label>Corresponding Address</label>
                     <input type="text" class="form-control bgColor" name="add" required>
                 </div>
-                <div class="form-group">
+               %{-- <div class="form-group">
                     <label>Enter Company Name</label>
                     <select name="cmp" class="form-control bgColor" required>
                         <option></option>
@@ -164,7 +164,7 @@
                         <option value="${it.id}">${it.companyName}</option>
                         </g:each>
                     </select>
-                </div>
+                </div>--}%
             </div>
             <div class="col-md-2">
                 <button type="submit" class="btn btn-success">Submit</button>

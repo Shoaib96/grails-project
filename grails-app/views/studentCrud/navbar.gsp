@@ -35,6 +35,11 @@
         <div>${flash.message}</div>
     </div>
 </g:if>
+        <g:if test = "${flash.foo}">
+            <div class="alert alert-success">
+                <div>${flash.foo}</div>
+            </div>
+        </g:if>
     </div>
 </div>
 <asset:image src="stud1.jpg" class="img"/>

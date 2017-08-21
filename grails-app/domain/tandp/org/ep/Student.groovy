@@ -30,7 +30,6 @@ class Student {
     String add
 //    String companyName
     Login loginref
-    Company companyref
 
     static constraints = {
     }

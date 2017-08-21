@@ -9,42 +9,40 @@
 <html>
 <head>
     <title></title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <asset:stylesheet src="bootstrap.min.css"/>
+    <asset:javascript src="jquery-2.2.0.min.js"/>
+    <asset:javascript src="bootstrap.min.js"/>
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+            <h1>New User</h1>
+            <hr>
             <form action="/login/newuser" method="post">
                 <div class="form-group">
                     <label>First Name</label>
-                    <input type="text" class="form-control" name="firstName">
+                    <input type="text" class="form-control" name="firstName" autofocus required>
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" class="form-control" name="lastName">
+                    <input type="text" class="form-control" name="lastName" required>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" class="form-control" name="email">
+                    <input type="email" class="form-control" name="email" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" class="form-control" name="password" required>
                 </div>
                 <div class="form-group">
                     <label>College Name</label>
-                    <input type="text" class="form-control" value="SSGI" name="clgname">
+                    <input type="text" class="form-control" value="SSGI" name="clgname" required>
                 </div>
-                <button type="submit" class="btn btn-default">SignUp</button>
-                %{--<button type="submit" class="btn btn-default" formaction="list">Viewlist</button>--}%
+                <button type="submit" class="btn btn-success">SignUp</button>
+                &nbsp;
+                <g:link action="index"  class="btn btn-danger">Cancel</g:link>
             </form>
         </div>
     </div>

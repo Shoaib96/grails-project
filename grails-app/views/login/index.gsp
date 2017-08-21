@@ -38,15 +38,17 @@
         margin-top: 15px;
         margin-left: 55%;
     }
-    /*.footer {
+    .footer {
         width: 100%;
         height: 10%;
-        padding-top: 0px;
+        padding-top: 1px;
         background-color: #00224A;
-    }*/
+
+    }
     p {
         text-align: center;
         color: white;
+        margin-top: 20px;
     }
 
 </style>
@@ -107,8 +109,8 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-    %{--<div class="footer">
+    <div class="footer">
             <p>Copyright &copy; 2017. EduPanda All Rights Reserved</p>
-    </div>--}%
+    </div>
 </body>
 </html>

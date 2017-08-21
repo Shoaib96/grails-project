@@ -30,45 +30,45 @@
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>University Roll No</th>
-                    <td>${studentInstance?.universityRoll}</td>
+                    <td>${studentInstance?.studentref.universityRoll}</td>
                 </tr>
                 <tr>
                     <th>College Id</th>
-                    <td>${studentInstance?.clgId}</td>
+                    <td>${studentInstance?.studentref.clgId}</td>
 
                 </tr>
                 <tr>
                     <th>Branch</th>
-                    <td>${studentInstance?.branch}</td>
+                    <td>${studentInstance?.studentref.branch}</td>
 
                 </tr>
                 <tr>
                     <th>Name Of Student</th>
-                    <td>${studentInstance?.nameOfStud}</td>
+                    <td>${studentInstance?.studentref.nameOfStud}</td>
                 </tr>
                 <tr>
                     <th>Mobile No</th>
-                    <td>${studentInstance?.mobno}</td>
+                    <td>${studentInstance?.studentref.mobno}</td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>${studentInstance?.email}</td>
+                    <td>${studentInstance?.studentref.email}</td>
                 </tr>
                 <tr>
                     <th>Gender</th>
-                    <td>${studentInstance?.gender}</td>
+                    <td>${studentInstance?.studentref.gender}</td>
                 </tr>
                     <tr>
                     <th>Date</th>
-                    <td>${studentInstance?.date}</td>
+                    <td>${studentInstance?.studentref.date}</td>
                 </tr>
                 <tr>
                     <th>10<sup>th</sup> %</th>
-                    <td>${studentInstance?.tenth}</td>
+                    <td>${studentInstance?.studentref.tenth}</td>
                 </tr>
                 <tr>
                     <th>10<sup>th</sup> Board</th>
-                    <td>${studentInstance?.twlbrd}</td>
+                    <td>${studentInstance?.studentref.twlbrd}</td>
                 </tr>
             </table>
     </div>
@@ -77,44 +77,44 @@
 
         <tr>
                     <th>10<sup>th</sup> Passing Year</th>
-                    <td>${studentInstance?.tenpyr}</td>
+                    <td>${studentInstance?.studentref.tenpyr}</td>
                 </tr>
                 <tr>
                     <th>12<sup>th</sup></th>
-                    <td>${studentInstance?.twelveth}</td>
+                    <td>${studentInstance?.studentref.twelveth}</td>
                 </tr>
                 <tr>
                     <th>12<sup>th</sup> Board</th>
-                    <td>${studentInstance?.twlbrd}</td>
+                    <td>${studentInstance?.studentref.twlbrd}</td>
                 </tr>
                 <tr>
                     <th>12<sup>th</sup> Passing Year</th>
-                    <td>${studentInstance?.twlpyr}</td>
+                    <td>${studentInstance?.studentref.twlpyr}</td>
                 </tr>
 
                 <tr>
                     <th>1<sup>st</sup> Sem</th>
-                    <td>${studentInstance?.firsem}</td>
+                    <td>${studentInstance?.studentref.firsem}</td>
                 </tr>
                 <tr>
                     <th>2<sup>nd</sup> Sem</th>
-                    <td>${studentInstance?.secsem}</td>
+                    <td>${studentInstance?.studentref.secsem}</td>
                 </tr>
                 <tr>
                     <th>3<sup>rd</sup> Sem</th>
-                    <td>${studentInstance?.thisem}</td>
+                    <td>${studentInstance?.studentref.thisem}</td>
                 </tr>
                 <tr>
                     <th>4<sup>th</sup> Sem</th>
-                    <td>${studentInstance?.fousem}</td>
+                    <td>${studentInstance?.studentref.fousem}</td>
                 </tr>
                 <tr>
                     <th>5<sup>th</sup> Sem</th>
-                    <td>${studentInstance?.fivsem}</td>
+                    <td>${studentInstance?.studentref.fivsem}</td>
                 </tr>
                 <tr>
                     <th>6<sup>th</sup> Sem</th>
-                    <td>${studentInstance?.sixsem}</td>
+                    <td>${studentInstance?.studentref.sixsem}</td>
                 </tr>
     </table>
     </div>
@@ -123,33 +123,33 @@
 
                 <tr>
                     <th>Average</th>
-                    <td>${studentInstance?.avg}</td>
+                    <td>${studentInstance?.studentref.avg}</td>
                 </tr>
 
 
                 <tr>
                     <th>Current Backlog</th>
-                    <td>${studentInstance?.curback}</td>
+                    <td>${studentInstance?.studentref.curback}</td>
                 </tr>
                 <tr>
                     <th>Passing year</th>
-                    <td>${studentInstance?.poy}</td>
+                    <td>${studentInstance?.studentref.poy}</td>
                 </tr>
                 <tr>
                     <th>Home Town</th>
-                    <td>${studentInstance?.hmtown}</td>
+                    <td>${studentInstance?.studentref.hmtown}</td>
                 </tr>
                 <tr>
                     <th>Father's Name</th>
-                    <td>${studentInstance?.fname}</td>
+                    <td>${studentInstance?.studentref.fname}</td>
                 </tr>
                 <tr>
                     <th>Occupation</th>
-                    <td>${studentInstance?.ocup}</td>
+                    <td>${studentInstance?.studentref.ocup}</td>
                 </tr>
                 <tr>
                     <th>Address</th>
-                    <td>${studentInstance?.add}</td>
+                    <td>${studentInstance?.studentref.add}</td>
                 </tr>
                 <tr>
                     <th>Company Name</th>

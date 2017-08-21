@@ -32,7 +32,7 @@
 </g:if>
 
     <div class="container">
-        <g:if test = "${stud}">
+        <g:if test = "${completeInstance}">
         <div class="row">
             <div class="col-md-12">
                 <h1 style="text-align: center;">Student List</h1>
@@ -43,15 +43,17 @@
                         <th>College Id</th>
                         <th>Branch</th>
                         <th>Name Of Stud</th>
+                        <th>Company Name</th>
                         <th>Action</th>
                     </tr>
-                    <g:each in = "${stud}">
+                    <g:each in = "${completeInstance}">
                         <tr>
-                            <td>${it.universityRoll}</td>
-                            <td>${it.clgId}</td>
-                            <td>${it.branch}</td>
-                            <td>${it.nameOfStud}</td>
-                              <td>
+                            <td>${it.studentref.universityRoll}</td>
+                            <td>${it.studentref.clgId}</td>
+                            <td>${it.studentref.branch}</td>
+                            <td>${it.studentref.nameOfStud}</td>
+                            <td>${it.companyref.companyName}</td>
+                            <td>
                             <g:link action="viewCompleteList" id="${it.id}" class="btn btn-primary">View</g:link>
                               </td>
                         </tr>
