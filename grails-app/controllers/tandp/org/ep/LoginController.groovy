@@ -15,7 +15,7 @@ class LoginController {
         }
         else if(currentUser) {
             session.loginuser = currentUser.id
-            flash.message = "Login Successfully. Welcome Student"
+            flash.message = "Login Successfully. Welcome ${currentUser.firstName}"
             redirect controller: "studentCrud", action: "navbar"
         }
         else {

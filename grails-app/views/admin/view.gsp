@@ -17,7 +17,7 @@
 
 <body>
 
-
+<div class="container">
 <div class="row">
     <div class="col-md-6">
         <form action="/admin/update/${companyInstance?.id}">
@@ -48,6 +48,7 @@
             <button type="submit" class="btn btn-success">Update</button>
         </form>
     </div>
+</div>
 </div>
 </body>
 </html>

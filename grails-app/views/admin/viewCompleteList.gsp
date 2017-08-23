@@ -15,149 +15,149 @@
     <asset:javascript src="bootstrap.min.js"/>
 
     <style>
-    th, tr {
+        th, tr {
         text-align: center;
     }
 
-        .table {
-            background-color: #98A9BB;
-        }
     </style>
 </head>
 
 <body>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
             <h1 style="text-align: center;">About Student</h1>
             <hr>
-            <div style="background-color: white">
+    <div class="col-md-4">
             <table class="table table-bordered table-striped">
                 <tr>
                     <th>University Roll No</th>
-                    <td>${studentInstance?.universityRoll}</td>
+                    <td>${studentInstance?.studentref.universityRoll}</td>
                 </tr>
                 <tr>
                     <th>College Id</th>
-                    <td>${studentInstance?.clgId}</td>
+                    <td>${studentInstance?.studentref.clgId}</td>
 
                 </tr>
                 <tr>
                     <th>Branch</th>
-                    <td>${studentInstance?.branch}</td>
+                    <td>${studentInstance?.studentref.branch}</td>
 
                 </tr>
                 <tr>
-                    <th>Name Of Stud</th>
-                    <td>${studentInstance?.nameOfStud}</td>
+                    <th>Name Of Student</th>
+                    <td>${studentInstance?.studentref.nameOfStud}</td>
                 </tr>
                 <tr>
-                    <th>Mob No</th>
-                    <td>${studentInstance?.mobno}</td>
+                    <th>Mobile No</th>
+                    <td>${studentInstance?.studentref.mobno}</td>
                 </tr>
                 <tr>
                     <th>Email</th>
-                    <td>${studentInstance?.email}</td>
+                    <td>${studentInstance?.studentref.email}</td>
                 </tr>
                 <tr>
                     <th>Gender</th>
-                    <td>${studentInstance?.gender}</td>
+                    <td>${studentInstance?.studentref.gender}</td>
                 </tr>
-                <tr>
+                    <tr>
                     <th>Date</th>
-                    <td>${studentInstance?.date}</td>
+                    <td>${studentInstance?.studentref.date}</td>
                 </tr>
                 <tr>
-                    <th>Tenth</th>
-                    <td>${studentInstance?.tenth}</td>
+                    <th>10<sup>th</sup> %</th>
+                    <td>${studentInstance?.studentref.tenth}</td>
                 </tr>
                 <tr>
-                    <th>Tenth Board</th>
-                    <td>${studentInstance?.twlbrd}</td>
+                    <th>10<sup>th</sup> Board</th>
+                    <td>${studentInstance?.studentref.twlbrd}</td>
+                </tr>
+            </table>
+    </div>
+    <div class="col-md-4">
+    <table class="table table-bordered table-striped">
+
+        <tr>
+                    <th>10<sup>th</sup> Passing Year</th>
+                    <td>${studentInstance?.studentref.tenpyr}</td>
                 </tr>
                 <tr>
-                    <th>Tenth Passing Year</th>
-                    <td>${studentInstance?.tenpyr}</td>
+                    <th>12<sup>th</sup></th>
+                    <td>${studentInstance?.studentref.twelveth}</td>
                 </tr>
                 <tr>
-                    <th>Twelve</th>
-                    <td>${studentInstance?.twelveth}</td>
+                    <th>12<sup>th</sup> Board</th>
+                    <td>${studentInstance?.studentref.twlbrd}</td>
                 </tr>
                 <tr>
-                    <th>Twelve Board</th>
-                    <td>${studentInstance?.twlbrd}</td>
+                    <th>12<sup>th</sup> Passing Year</th>
+                    <td>${studentInstance?.studentref.twlpyr}</td>
+                </tr>
+
+                <tr>
+                    <th>1<sup>st</sup> Sem</th>
+                    <td>${studentInstance?.studentref.firsem}</td>
                 </tr>
                 <tr>
-                    <th>Twelve Passing Year</th>
-                    <td>${studentInstance?.twlpyr}</td>
+                    <th>2<sup>nd</sup> Sem</th>
+                    <td>${studentInstance?.studentref.secsem}</td>
                 </tr>
                 <tr>
-                    <th>Fir Sem</th>
-                    <td>${studentInstance?.firsem}</td>
+                    <th>3<sup>rd</sup> Sem</th>
+                    <td>${studentInstance?.studentref.thisem}</td>
                 </tr>
                 <tr>
-                    <th>Sec Sem</th>
-                    <td>${studentInstance?.secsem}</td>
+                    <th>4<sup>th</sup> Sem</th>
+                    <td>${studentInstance?.studentref.fousem}</td>
                 </tr>
                 <tr>
-                    <th>Thi Sem</th>
-                    <td>${studentInstance?.thisem}</td>
+                    <th>5<sup>th</sup> Sem</th>
+                    <td>${studentInstance?.studentref.fivsem}</td>
                 </tr>
                 <tr>
-                    <th>Fou Sem</th>
-                    <td>${studentInstance?.fousem}</td>
+                    <th>6<sup>th</sup> Sem</th>
+                    <td>${studentInstance?.studentref.sixsem}</td>
                 </tr>
-                <tr>
-                    <th>Fiv Sem</th>
-                    <td>${studentInstance?.fivsem}</td>
-                </tr>
-                <tr>
-                    <th>Six Sem</th>
-                    <td>${studentInstance?.sixsem}</td>
-                </tr>
+    </table>
+    </div>
+    <div class="col-md-4">
+            <table class="table table-bordered table-striped">
+
                 <tr>
                     <th>Average</th>
-                    <td>${studentInstance?.avg}</td>
+                    <td>${studentInstance?.studentref.avg}</td>
                 </tr>
+
+
                 <tr>
                     <th>Current Backlog</th>
-                    <td>${studentInstance?.curback}</td>
+                    <td>${studentInstance?.studentref.curback}</td>
                 </tr>
                 <tr>
                     <th>Passing year</th>
-                    <td>${studentInstance?.poy}</td>
+                    <td>${studentInstance?.studentref.poy}</td>
                 </tr>
                 <tr>
                     <th>Home Town</th>
-                    <td>${studentInstance?.hmtown}</td>
+                    <td>${studentInstance?.studentref.hmtown}</td>
                 </tr>
                 <tr>
                     <th>Father's Name</th>
-                    <td>${studentInstance?.fname}</td>
+                    <td>${studentInstance?.studentref.fname}</td>
                 </tr>
                 <tr>
                     <th>Occupation</th>
-                    <td>${studentInstance?.ocup}</td>
+                    <td>${studentInstance?.studentref.ocup}</td>
                 </tr>
                 <tr>
                     <th>Address</th>
-                    <td>${studentInstance?.add}</td>
+                    <td>${studentInstance?.studentref.add}</td>
                 </tr>
                 <tr>
                     <th>Company Name</th>
-                    <td>${studentInstance?.companyName}</td>
+                    <td>${studentInstance?.companyref.companyName}</td>
                 </tr>
-                <tr>
-                    <th>Action</th>
-                    <td><g:link action="delete" id="${studentInstance?.id}" class="btn btn-danger">Delete</g:link></td>
-                </tr>
-            </table>
-            </div>
-            <div style="margin-left: 2%">
-                <g:link action="viewList"  class="btn btn-primary" style="width: 80px">Done</g:link>
-            </div>
-        </div>
-    </div>
+                </table>
+</div>
+    <g:link action="delete" id="${studentInstance?.id}" class="btn btn-danger" style="margin-left: 15px;">Delete</g:link>
 </div>
 </body>
 </html>

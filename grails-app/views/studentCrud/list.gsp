@@ -9,7 +9,7 @@
 <html>
 <head>
     <title></title>
-    %{--<meta name="layout" content="studentNav"/>--}%
+    <meta name="layout" content="studentNav"/>
     <asset:stylesheet src="bootstrap.min.css"/>
     <asset:javascript src="jquery-2.2.0.min.js"/>
     <asset:javascript src="bootstrap.min.js"/>
@@ -20,78 +20,142 @@
         <div>${flash.message}</div>
     </div>
 </g:if>
+<div class="container">
+    <h1>Profile</h1>
+    <hr>
     <div class="row">
-        <div class="col-md-12">
+    <div class="col-md-4">
             <table class="table table-bordered">
+              <g:each in = "${stud}">
                 <tr>
                     <th>University Roll No</th>
-                    <th>College Id</th>
-                    <th>Branch</th>
-                    <th>Name Of Stud</th>
-                    <th>Mob No</th>
-                    <th>Email</th>
-                    <th>Gender</th>
-                    <th>Date</th>
-                    <th>10<sup>th</sup></th>
-                    <th>10<sup>th</sup> Board</th>
-                    <th>10<sup>th</sup> Passing Year</th>
-                    <th>12<sup>th</sup></th>
-                    <th>12<sup>th</sup> Board</th>
-                    <th>12<sup>th</sup> Passing Year</th>
-                    <th>First Sem</th>
-                    <th>Second Sem</th>
-                    <th>Third Sem</th>
-                    <th>Fourth Sem</th>
-                    <th>Fivth Sem</th>
-                    <th>Sixth Sem</th>
-                    <th>Average</th>
-                    <th>Current Backlog</th>
-                    <th>Passing year</th>
-                    <th>Home Town</th>
-                    <th>Father's Name</th>
-                    <th>Occupation</th>
-                    <th>Address</th>
-                    <th>Company Name</th>
-                    <th>Action</th>
+                    <td>${it.universityRoll}</td>
                 </tr>
+                <tr>
+                    <th>College Id</th>
+                    <td>${it.clgId}</td>
+                </tr>
+                <tr>
+                    <th>Branch</th>
+                    <td>${it.branch}</td>
+                </tr>
+                <tr>
+                    <th>Name Of Stud</th>
+                    <td>${it.nameOfStud}</td>
+                </tr>
+                <tr>
+                    <th>Mob No</th>
+                    <td>${it.mobno}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>${it.email}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>${it.gender}</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td>${it.date}</td>
+                </tr>
+                <tr>
+                    <th>10<sup>th</sup></th>
+                    <td>${it.tenth}</td>
+                </tr>
+                <tr>
+                    <th>10<sup>th</sup> Board</th>
+                    <td>${it.tenbrd}</td>
+                </tr>
+              </g:each>
+            </table>
+    </div>
+        <div class="col-md-4">
+            <table class="table table-bordered">
                 <g:each in = "${stud}">
                     <tr>
-                        <td>${it.universityRoll}</td>
-                        <td>${it.clgId}</td>
-                        <td>${it.branch}</td>
-                        <td>${it.nameOfStud}</td>
-                        <td>${it.mobno}</td>
-                        <td>${it.email}</td>
-                        <td>${it.gender}</td>
-                        <td>${it.date}</td>
-                        <td>${it.tenth}</td>
-                        <td>${it.tenbrd}</td>
-                        <td>${it.tenpyr}</td>
-                        <td>${it.twelveth}</td>
-                        <td>${it.twlbrd}</td>
-                        <td>${it.twlpyr}</td>
-                        <td>${it.firsem}</td>
-                        <td>${it.secsem}</td>
-                        <td>${it.thisem}</td>
-                        <td>${it.fousem}</td>
-                        <td>${it.fivsem}</td>
-                        <td>${it.sixsem}</td>
-                        <td>${it.avg}</td>
-                        <td>${it.curback}</td>
-                        <td>${it.poy}</td>
-                        <td>${it.hmtown}</td>
-                        <td>${it.fname}</td>
-                        <td>${it.ocup}</td>
-                        <td>${it.add}</td>
-                        <td>${it.companyName}</td>
-                        <td><g:link action="view" id="${it.id}" class="btn btn-primary">Update</g:link></td>
-                    </tr>
+                    <th>10<sup>th</sup> Passing Year</th>
+                    <td>${it.tenpyr}</td>
+                </tr>
+                <tr>
+                    <th>12<sup>th</sup></th>
+                    <td>${it.twelveth}</td>
+                </tr>
+                <tr>
+                    <th>12<sup>th</sup> Board</th>
+                    <td>${it.twlbrd}</td>
+                </tr>
+                <tr>
+                    <th>12<sup>th</sup> Passing Year</th>
+                    <td>${it.twlpyr}</td>
+                </tr>
+
+               <tr>
+                    <th>First Sem</th>
+                    <td>${it.firsem}</td>
+                </tr>
+                <tr>
+                    <th>Second Sem</th>
+                    <td>${it.secsem}</td>
+                </tr>
+                <tr>
+                    <th>Third Sem</th>
+                    <td>${it.thisem}</td>
+                </tr>
+                <tr>
+                    <th>Fourth Sem</th>
+                    <td>${it.fousem}</td>
+                </tr>
+                <tr>
+                    <th>Fivth Sem</th>
+                    <td>${it.fivsem}</td>
+                </tr>
+                <tr>
+                    <th>Sixth Sem</th>
+                    <td>${it.sixsem}</td>
+                </tr>
                 </g:each>
             </table>
-
-                <g:link action="navbar" class="btn btn-primary" style="margin-left: 3%">Ok</g:link>
+        </div>
+        <div class="col-md-4">
+            <table class="table table-bordered">
+                <g:each in = "${stud}">
+                    <tr>
+                    <th>Average</th>
+                    <td>${it.avg}</td>
+                </tr>
+                <tr>
+                    <th>Current Backlog</th>
+                    <td>${it.curback}</td>
+                </tr>
+                <tr>
+                    <th>Passing year</th>
+                    <td>${it.poy}</td>
+                </tr>
+                <tr>
+                    <th>Home Town</th>
+                    <td>${it.hmtown}</td>
+                </tr>
+                <tr>
+                    <th>Father's Name</th>
+                    <td>${it.fname}</td>
+                </tr>
+                <tr>
+                    <th>Occupation</th>
+                    <td>${it.ocup}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>${it.add}</td>
+                </tr>
+                <tr>
+                    <th>Action</th>
+                    <td><g:link action="view" id="${it.id}" class="btn btn-primary">Update</g:link></td>
+                </tr>
+              </g:each>
             </table>
-                    </div>
     </div>
+    </div>
+</div>
 </body>
 </html>

@@ -6,14 +6,18 @@ class StudentCrudController {
         if(session.loginuser) {
             Login loginUser = Login.findById(session.loginuser)
             List studList = Student.findAllByLoginref(loginUser)
-            [stud: studList]
-            List companyList = Company.findAll()
-            [companyList: companyList]
+            if(studList) {
+             def message = "You are already registered"
+                [message: message]
+            }
+            else {
+                List companyList = Company.findAll()
+                [companyList: companyList]
+            }
         }
         else {
             redirect controller:"login", action: "index"
         }
-
     }
 
     def list() {
@@ -21,10 +25,10 @@ class StudentCrudController {
             Login loginUser = Login.findById(session.loginuser)
             List studList = Student.findAllByLoginref(loginUser)
             [stud: studList]
+
         }
         else
             redirect controller:"login", action: "index"
-
     }
 
     def dataSave() {
@@ -56,11 +60,13 @@ class StudentCrudController {
         studentDetails.fname = params.fname
         studentDetails.ocup = params.ocup
         studentDetails.add = params.add
-        studentDetails.companyName = params.cmp
+//        studentDetails.companyName = params.cmp
         studentDetails.loginref = session.loginuser
+//        studentDetails.companyref = cmp
         Student studentInstance = new Student(studentDetails)
         studentInstance.save(flush: true)
-        redirect(action: "index")
+        flash.foo = "Register Successfully."
+        redirect(action: "navbar")
     }
 
     def navbar(long id) {
@@ -115,6 +121,7 @@ class StudentCrudController {
             studentInstance.add = params.add
             studentInstance.save(flush: true)
         }
+
         redirect(action: "view")
     }
 
@@ -141,6 +148,24 @@ class StudentCrudController {
         }
         else
             redirect controller:"login", action: "index"
+    }
+
+    def completeList(long id) {
+        CompleteList completeListInstance = CompleteList.findByCompanyrefAndStudentref(Company.get(id), Student.get(session.loginuser))
+
+        if(completeListInstance){
+            flash.message = "You are already registered"
+            redirect action: "companyView"
+        }
+        else {
+            Map completeList = [:]
+            completeList.companyref = id
+            completeList.studentref = session.loginuser
+            CompleteList completeListInstance1 = new CompleteList(completeList)
+            completeListInstance1.save(flush: true)
+            flash.message = "Registered Successfully"
+            redirect action: "companyView"
+        }
     }
     def logout() {
         session.invalidate()

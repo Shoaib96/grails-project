@@ -17,6 +17,10 @@
     .table {
         margin-top: 3%;
     }
+    th, tr {
+        text-align: center;
+    }
+
     /*.img {
         position: absolute;
         top: 0px;
@@ -31,6 +35,11 @@
 <body>
 %{--<asset:image src="bg-3-full.jpg" class="img"/>--}%
 <div class="container">
+    <g:if test = "${flash.message}">
+        <div class="alert alert-info">
+            <div>${flash.message}</div>
+        </div>
+    </g:if>
     <g:if test = "${companyList}">
     <div class="row">
         <div class="col-md-12">
@@ -45,6 +54,7 @@
                     <th>Date Of Recruitment</th>
                     <th>Number Of Recruitment</th>
                     <th>Branch</th>
+                    <th>Action</th>
                 </tr>
                 <g:each in = "${companyList}">
                     <tr>
@@ -54,6 +64,7 @@
                         <td>${it.dateOfRecruitment}</td>
                         <td>${it.numOfRecruitment}</td>
                         <td>${it.branch}</td>
+                        <td><g:link action="completeList" id="${it.id}" class="btn btn-primary">Apply</g:link></td>
                     </tr>
                 </g:each>
             </table>

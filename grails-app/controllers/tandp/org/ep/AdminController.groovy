@@ -10,19 +10,18 @@ class AdminController {
 
     def viewList() {
        if(session.loginuser) {
-           List studList = Student.findAll()
-           [stud: studList]
+               List<CompleteList> completeInstance = CompleteList.findAll()
+               [completeInstance: completeInstance]
        }
         else
            redirect controller:"login", action: "index"
-
     }
 
     def viewCompleteList(long id) {
         if(session.loginuser) {
-            Student studentInstance = Student.get(id)
-            if (studentInstance) {
-                [studentInstance: studentInstance]
+            CompleteList completeInstance = CompleteList.get(id)
+            if (completeInstance) {
+                [studentInstance: completeInstance]
             } else {
                 redirect(action: "viewList")
             }
@@ -33,10 +32,9 @@ class AdminController {
     }
 
     def delete(long id) {
-        println params.id
-        Student studentInstance = Student.findById(id)
-        if(studentInstance) {
-            studentInstance.delete(flush: true)
+        CompleteList completeListInstance = CompleteList.findById(id)
+        if(completeListInstance) {
+            completeListInstance.delete(flush: true)
             flash.message = "Delete Successfully"
         }
         else {
@@ -53,18 +51,25 @@ class AdminController {
     }
 
     def companySave() {
-        Map company = [:]
-        company.companyId = params.companyId
-        company.companyName = params.companyName
-        company.percentCriteria = params.percentCriteria
-        company.dateOfRecruitment = params.dateOfRecruitment
-        company.numOfRecruitment = params.numOfRecruitment
-        company.branch = params.branch
-        company.about = params.about
-        company.loginref = session.loginuser
-        Company companyInstance = new Company(company)
-        companyInstance.save(flush: true)
-        redirect(action: "companyRegister")
+        Company companyInstance = Company.findByCompanyName(params.companyName)
+        if(companyInstance) {
+            flash.message = "Company already registered"
+            redirect action: "companyRegister"
+        }
+        else {
+            Map company = [:]
+            company.companyId = params.companyId
+            company.companyName = params.companyName
+            company.percentCriteria = params.percentCriteria
+            company.dateOfRecruitment = params.dateOfRecruitment
+            company.numOfRecruitment = params.numOfRecruitment
+            company.branch = params.branch
+            company.about = params.about
+            company.loginref = session.loginuser
+            Company companyInstance1 = new Company(company)
+            companyInstance1.save(flush: true)
+            redirect(action: "companyRegister")
+        }
     }
 
     def deleteCompany(long id) {
@@ -87,9 +92,7 @@ class AdminController {
         }
         else
             redirect controller:"login", action: "index"
-
     }
-
 
     def view(long id) {
 
@@ -125,7 +128,7 @@ class AdminController {
     }
 
     def downloadList() {
-        List studList = Student.findAll()
+        List CompleteList = CompleteList.findAll()
         Map download = [:]
         download.filename =params.filename
         Admin adminInstance = new Admin(download)
@@ -134,10 +137,10 @@ class AdminController {
         if (file.exists()) {
             redirect(action: "download")
         } else {
-            file.write "universityRoll, collegeId, branch, nameOfStud, mob, email, gender, date, tenth, tenthbrd, tenthyr, twelfth, twelfthbrd, twelfthpyr, 1sem, 2sem,3sem, 4sem, 5sem,6sem, avg, curback, poy, hmtown, fname, occup, add, comp\n"
+            file.write "University Roll, College Id, Branch, Name Of Student, Mob, Email, Gender, D.O.B., 10th %, 10th Board, 10th Passing Year, 12th %, 12th board, 12th Passing Year, 1st Sem, 2nd Sem,3rd Sem, 4th Sem, 5th Sem,6th Sem, Average, Current Backlog, B.E. Passing Year, Home Town, Father's Name, Occupation, Address, Company Name\n"
 
-            studList.each {
-                file << "${it.universityRoll},${it.clgId},${it.branch},${it.nameOfStud},${it.mobno},${it.email},${it.gender},${it.date},${it.tenth},${it.tenbrd},${it.tenpyr},${it.twelveth},${it.twlbrd},${it.twlpyr},${it.firsem},${it.secsem},${it.thisem},${it.fousem},${it.fivsem},${it.sixsem},${it.avg},${it.curback},${it.poy},${it.hmtown},${it.fname},${it.ocup},${it.add},${it.companyName}\n"
+            CompleteList.each {
+                file << "${it.studentref.universityRoll},${it.studentref.clgId},${it.studentref.branch},${it.studentref.nameOfStud},${it.studentref.mobno},${it.studentref.email},${it.studentref.gender},${it.studentref.date},${it.studentref.tenth},${it.studentref.tenbrd},${it.studentref.tenpyr},${it.studentref.twelveth},${it.studentref.twlbrd},${it.studentref.twlpyr},${it.studentref.firsem},${it.studentref.secsem},${it.studentref.thisem},${it.studentref.fousem},${it.studentref.fivsem},${it.studentref.sixsem},${it.studentref.avg},${it.studentref.curback},${it.studentref.poy},${it.studentref.hmtown},${it.studentref.fname},${it.studentref.ocup},${it.studentref.add},${it.companyref.companyName}\n"
             }
             redirect(action: "download")
         }
