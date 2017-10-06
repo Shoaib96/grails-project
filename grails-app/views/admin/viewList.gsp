@@ -21,6 +21,13 @@
     tr {
         text-align: center;
     }
+    .inv {
+        display: none;
+    }
+    .button {
+        text-align: right;
+    }
+
     </style>
 </head>
 
@@ -32,6 +39,29 @@
 </g:if>
 
     <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="viewList" method="post">
+                    <label><h2>Select Company Name</h2></label>
+                        <select class="form-control" name="id">
+                            <option>Select Company</option>
+                                <g:each in="${companyList}">
+                                    <option value="${it.id}">${it.companyName}</option>
+                                </g:each>
+                        </select>
+                    <br>
+                    <button class="btn btn-primary btn-sm">Find</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div class="button">
+                    <g:link action="download" class="btn btn-primary">Download List</g:link>
+                </div>
+            </div>
+
+        </div>
+
+
         <g:if test = "${completeInstance}">
         <div class="row">
             <div class="col-md-12">
@@ -59,14 +89,12 @@
                         </tr>
                     </g:each>
                 </table>
-                <g:link action="download" class="btn btn-primary">Download</g:link>
-                 </div>
-        </div>
+                </div>
+       </div>
         </g:if>
         <g:else>
-            <h1>No Student List to display</h1>
+            <h3>No Student List to display</h3>
         </g:else>
-
     </div>
 </body>
 </html>

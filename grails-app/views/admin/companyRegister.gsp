@@ -30,15 +30,19 @@
             <form action="/admin/companySave" method="post">
                 <div class="col-md-4">
                 <div class="form-group">
-                    <label>Company ID</label>
-                    <input type="text" class="form-control" name="companyId">
-                </div>
-                <div class="form-group">
                     <label>Company Name</label>
                     <input type="text" class="form-control" name="companyName">
                 </div>
+                    <div class="form-group">
+                        <label>Tenth % Criteria</label>
+                        <input type="tel" class="form-control" name="tenthCriteria">
+                    </div>
+                    <div class="form-group">
+                        <label>Twelfth % Criteria</label>
+                        <input type="tel" class="form-control" name="twelfthCriteria">
+                    </div>
                 <div class="form-group">
-                    <label>Percentage Criteria</label>
+                    <label>B.E. % Criteria</label>
                     <input type="tel" class="form-control" name="percentCriteria">
                 </div>
                 <div class="form-group">

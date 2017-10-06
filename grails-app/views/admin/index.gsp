@@ -26,6 +26,12 @@
         <div>${flash.message}</div>
     </div>
 </g:if>
+<g:if test = "${flash.foo}">
+    <div class="alert alert-success">
+        <div>${flash.foo}</div>
+    </div>
+</g:if>
+
     </div>
 </div>
 <asset:image src="Picture1.png" style="width:100%; position: absolute; top: 0px; left: 0px; z-index: -1; height: 100%;" />

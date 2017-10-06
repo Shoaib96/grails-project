@@ -133,6 +133,7 @@ class StudentCrudController {
 */
             List companyList = Company.findAll()
             [companyList: companyList]
+
         }
         else
             redirect controller:"login", action: "index"
@@ -151,10 +152,20 @@ class StudentCrudController {
     }
 
     def completeList(long id) {
+        Login loginUser = Login.findById(session.loginuser)
+        Student studList = Student.findByLoginref(loginUser)
+
+        Company companyList = Company.findById(id)
+
         CompleteList completeListInstance = CompleteList.findByCompanyrefAndStudentref(Company.get(id), Student.get(session.loginuser))
 
-        if(completeListInstance){
+        if(completeListInstance) {
             flash.message = "You are already registered"
+            redirect action: "companyView"
+        }
+
+        else if(studList.avg < companyList.percentCriteria || studList.tenth < companyList.tenthCriteria || studList.twelveth < companyList.twelfthCriteria) {
+            flash.foo = "Sorry!!! You are not eligible. Please check the criteria."
             redirect action: "companyView"
         }
         else {

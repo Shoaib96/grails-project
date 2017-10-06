@@ -8,10 +8,12 @@ class AdminController {
             redirect controller:"login", action:"index"
     }
 
-    def viewList() {
+    def viewList(long id) {
        if(session.loginuser) {
-               List<CompleteList> completeInstance = CompleteList.findAll()
-               [completeInstance: completeInstance]
+
+                List<Company> companyList = Company.findAll()
+                List<CompleteList> completeInstance = CompleteList.findAllByCompanyref(Company.get(id))
+                [companyList: companyList, completeInstance: completeInstance]
        }
         else
            redirect controller:"login", action: "index"
@@ -58,8 +60,9 @@ class AdminController {
         }
         else {
             Map company = [:]
-            company.companyId = params.companyId
             company.companyName = params.companyName
+            company.tenthCriteria = params.tenthCriteria
+            company.twelfthCriteria = params.twelfthCriteria
             company.percentCriteria = params.percentCriteria
             company.dateOfRecruitment = params.dateOfRecruitment
             company.numOfRecruitment = params.numOfRecruitment
@@ -95,21 +98,25 @@ class AdminController {
     }
 
     def view(long id) {
+        if(session.loginuser) {
 
-        Company companyInstance = Company.get(id)
-        if(companyInstance) {
-            [companyInstance: companyInstance]
+            Company companyInstance = Company.get(id)
+            if (companyInstance) {
+                [companyInstance: companyInstance]
+            } else {
+                flash.message = "Update Successfully"
+                redirect(action: "companyView")
+            }
         }
-        else {
-            flash.message = "Update Successfully"
-            redirect(action: "companyView")
-        }
+        else
+            redirect controller: "login", action: "index"
     }
     def update(long id) {
         Company companyInstance = Company.get(id)
         if(companyInstance) {
-            companyInstance.companyId = params.companyId
             companyInstance.companyName = params.companyName
+            companyInstance.tenthCriteria = Double.parseDouble(params.tenthCriteria)
+            companyInstance.twelfthCriteria = Double.parseDouble(params.twelfthCriteria)
             companyInstance.percentCriteria = Double.parseDouble(params.percentCriteria)
             companyInstance.dateOfRecruitment = params.dateOfRecruitment
             companyInstance.numOfRecruitment = Integer.parseInt(params.numOfRecruitment)
@@ -121,14 +128,17 @@ class AdminController {
     }
 
     def download() {
-        if (session.loginuser){}
+        if (session.loginuser){
+            List<Company> companyList = Company.findAll()
+            [companyList: companyList]
+        }
         else
             redirect controller:"login", action: "index"
 
     }
 
-    def downloadList() {
-        List CompleteList = CompleteList.findAll()
+    def downloadList(long id) {
+        List CompleteList = CompleteList.findAllByCompanyref(Company.get(id))
         Map download = [:]
         download.filename =params.filename
         Admin adminInstance = new Admin(download)
@@ -142,7 +152,8 @@ class AdminController {
             CompleteList.each {
                 file << "${it.studentref.universityRoll},${it.studentref.clgId},${it.studentref.branch},${it.studentref.nameOfStud},${it.studentref.mobno},${it.studentref.email},${it.studentref.gender},${it.studentref.date},${it.studentref.tenth},${it.studentref.tenbrd},${it.studentref.tenpyr},${it.studentref.twelveth},${it.studentref.twlbrd},${it.studentref.twlpyr},${it.studentref.firsem},${it.studentref.secsem},${it.studentref.thisem},${it.studentref.fousem},${it.studentref.fivsem},${it.studentref.sixsem},${it.studentref.avg},${it.studentref.curback},${it.studentref.poy},${it.studentref.hmtown},${it.studentref.fname},${it.studentref.ocup},${it.studentref.add},${it.companyref.companyName}\n"
             }
-            redirect(action: "download")
+            flash.foo = "Download Successfully"
+            redirect(action: "index")
         }
     }
 }

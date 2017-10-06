@@ -14,8 +14,10 @@
     <asset:javascript src="jquery-3.2.0.min.js"/>
     <asset:javascript src="bootstrap.min.js"/>
     <style>
-    th,tr {
+    .table>tbody>tr>th, .table>tbody>tr>td {
         text-align: center;
+        vertical-align: middle;
+        padding: 6px;
     }
     .table {
          margin-top: 3%;
@@ -45,8 +47,9 @@
             <div style="background-color: white;">
                 <table class="table table-bordered table-striped">
                     <tr>
-                        <th>Company Id</th>
                         <th>Company Name</th>
+                        <th>Tenth % Criteria</th>
+                        <th>Twelfth % Criteria</th>
                         <th>Percentage Criteria</th>
                         <th>Date Of Recruitment</th>
                         <th>Number Of Recruitment</th>
@@ -55,16 +58,17 @@
                     </tr>
                     <g:each in = "${companyList}">
                         <tr>
-                            <td>${it.companyId}</td>
                             <td>${it.companyName}</td>
+                            <td>${it.tenthCriteria}</td>
+                            <td>${it.twelfthCriteria}</td>
                             <td>${it.percentCriteria}</td>
                             <td>${it.dateOfRecruitment}</td>
                             <td>${it.numOfRecruitment}</td>
                             <td>${it.branch}</td>
                             <td>
-                                <g:link action="view" id="${it.id}" class="btn btn-primary">Update</g:link>
-                                &nbsp;
-                                <g:link action="deleteCompany" id="${it.id}" class="btn btn-danger">Delete</g:link>
+                                <g:link action="view" id="${it.id}" class="btn btn-primary btn-sm">Update</g:link>
+
+                                <g:link action="deleteCompany" id="${it.id}" class="btn btn-danger btn-sm">Delete</g:link>
                             </td>
                         </tr>
                     </g:each>

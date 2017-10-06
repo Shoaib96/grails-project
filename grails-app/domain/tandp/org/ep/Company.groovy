@@ -1,8 +1,10 @@
 package tandp.org.ep
 
 class Company {
-    String companyId
+
     String companyName
+    double tenthCriteria
+    double twelfthCriteria
     double percentCriteria
     String dateOfRecruitment
     int numOfRecruitment

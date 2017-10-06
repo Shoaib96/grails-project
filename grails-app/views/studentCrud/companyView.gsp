@@ -40,6 +40,12 @@
             <div>${flash.message}</div>
         </div>
     </g:if>
+
+    <g:if test = "${flash.foo}">
+        <div class="alert alert-info">
+            <div>${flash.foo}</div>
+        </div>
+    </g:if>
     <g:if test = "${companyList}">
     <div class="row">
         <div class="col-md-12">
@@ -48,8 +54,9 @@
             <div style="background-color: white;">
             <table class="table table-bordered table-striped">
                 <tr>
-                    <th>Company Id</th>
                     <th>Company Name</th>
+                    <th>Tenth % Criteria</th>
+                    <th>Twelfth % Criteria</th>
                     <th>Percentage Criteria</th>
                     <th>Date Of Recruitment</th>
                     <th>Number Of Recruitment</th>
@@ -58,17 +65,18 @@
                 </tr>
                 <g:each in = "${companyList}">
                     <tr>
-                        <td>${it.companyId}</td>
                         <td>${it.companyName}</td>
+                        <td>${it.tenthCriteria}</td>
+                        <td>${it.twelfthCriteria}</td>
                         <td>${it.percentCriteria}</td>
                         <td>${it.dateOfRecruitment}</td>
                         <td>${it.numOfRecruitment}</td>
                         <td>${it.branch}</td>
-                        <td><g:link action="completeList" id="${it.id}" class="btn btn-primary">Apply</g:link></td>
+                        <td>
+                        <g:link action="completeList" id="${it.id}" class="btn btn-primary btn-sm">Apply</g:link></td>
                     </tr>
                 </g:each>
             </table>
-
             </div>
         </div>
     </div>

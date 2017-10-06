@@ -16,31 +16,20 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-
-    .nav {
+    .navbar {
         height: 10%;
         background-color: #00224A;
-        position: relative;
+        border-radius: 0;
+        margin-bottom: 0;
     }
     .logo {
-        margin-bottom: 1px;
-        margin-left: 20px;
         height: 40px;
         width: 40px;
     }
-    em {
-        position: absolute;
-        margin-top: 12px;
-        margin-left: 10%;
-    }
-    .form-inline {
-        position: absolute;
-        margin-top: 15px;
-        margin-left: 55%;
-    }
+
     .footer {
         width: 100%;
-        height: 10%;
+        height: 13%;
         padding-top: 1px;
         background-color: #00224A;
 
@@ -48,34 +37,46 @@
     p {
         text-align: center;
         color: white;
-        margin-top: 20px;
+        margin-top: 37px;
     }
-
+    .navbar-right {
+        margin-top: 1%;
+    }
 </style>
 </head>
 <body>
-<div class="nav navbar-default">
-        <span class="h1"><em style="color: white;">Training & Placement Cell</em></span>
-    <div class="navbar-brand">
-        <asset:image src="collegeLogo.jpg" class="logo"/>
-    </div>
+    <nav class="navbar">
+        <div class="container-fluid">
 
-    <form class="form-inline" action="/login/register" method="post">
-        <div class="form-group">
-            <input type="email" placeholder="Email" class="form-control" name="email" autofocus>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">
+                <asset:image src="collegeLogo.jpg" class="logo"/>
+            </a>
         </div>
-        &nbsp;
-        <div class="form-group">
-            <input type="password" placeholder="Password" class="form-control" name="password">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-left">
+                <h1 style="margin-bottom: 0; color: white;"><em>Training & Placement Cell</em></h1>
+            </div>
+        <form class="navbar-form navbar-right" action="/login/register" method="post">
+            <div class="form-group">
+                <input type="email" placeholder="Email" class="form-control" name="email" autofocus>
+            </div>
+            <div class="form-group">
+                <input type="password" placeholder="Password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-success" formaction="/login/signup">SignUp</button>
+        </form>
         </div>
-        &nbsp;
-        <button type="submit" class="btn btn-primary">Login</button>
-        &nbsp;
-        <button type="submit" class="btn btn-success" formaction="/login/signup">SignUp</button>
-
-    </form>
-
-</div>
+        </div>
+</nav>
 
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -110,7 +111,7 @@
     </a>
 </div>
     <div class="footer">
-            <p>Copyright &copy; 2017. EduPanda All Rights Reserved</p>
+            <p>Copyright &copy; 2017. Shoaib & Arpit All Rights Reserved</p>
     </div>
 </body>
 </html>

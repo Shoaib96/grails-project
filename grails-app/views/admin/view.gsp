@@ -21,13 +21,18 @@
 <div class="row">
     <div class="col-md-6">
         <form action="/admin/update/${companyInstance?.id}">
-            <div class="form-group">
-                <label>Company Id</label>
-                <input type="text" class="form-control" value="${companyInstance?.companyId}" name="companyId">
-            </div>
+
             <div class="form-group">
                 <label>Company Name </label>
                 <input type="text" class="form-control" value="${companyInstance?.companyName}" name="companyName">
+            </div>
+            <div class="form-group">
+                <label>Tenth % Criteria</label>
+                <input type="tel" class="form-control" value="${companyInstance?.tenthCriteria}" name="tenthCriteria">
+            </div>
+            <div class="form-group">
+                <label>Twelfth % Criteria</label>
+                <input type="tel" class="form-control" value="${companyInstance?.twelfthCriteria}" name="twelfthCriteria">
             </div>
             <div class="form-group">
                 <label>Percentage Criteria</label>

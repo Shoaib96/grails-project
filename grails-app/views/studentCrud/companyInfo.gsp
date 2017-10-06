@@ -42,7 +42,7 @@
             <div class="col-md-6">
                 <label>Select Company Name</label>
     <select id="target" class="form-control">
-        <option value=""></option>
+        <option value="">Select Company</option>
         <g:each in = "${companyList}">
             <option value="${it.id}">${it.companyName}</option>
         </g:each>

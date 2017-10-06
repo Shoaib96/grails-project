@@ -21,11 +21,22 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
+            <h1>Download</h1>
+            <hr>
             <form action="downloadList" method="post">
-                <div class="form-group"><label>Enter file name</label>
+                <label>Select Company Name</label>
+                <select class="form-control" name="id">
+                    <option>Select Company</option>
+                    <g:each in="${companyList}">
+                        <option value="${it.id}">${it.companyName}</option>
+                    </g:each>
+                </select>
+                <br>
+                <div class="form-group"><label>Enter file name with csv extension</label>
                     <input type="text" class="form-control" name="filename">
                 </div>
-                <input type="submit" class="btn btn-primary" value="Submit">
+                <br>
+                <button class="btn btn-primary">Ok</button>
             </form>
         </div>
     </div>
